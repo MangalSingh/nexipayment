@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<install version="1.0" type="plugin" group="payment">
+    <name>nexi_payments</name>
+    <title>Xpay Easy</title>
+    <author>Mangal</author>
+    <creationDate>01-03-2024</creationDate>
+    <copyright>Copyright 2010 - 2015 Octocub Team</copyright>
+    <license>http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU/GPL version 2</license>
+    <authorEmail>info@octocubsoftware.com</authorEmail>
+    <authorUrl>www.octocubsoftware.com</authorUrl>
+    <version>1.2.0</version>
+    <description>Redirect base payment plugin (like PayPal) For Events Booking Extension</description>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/administrator/components/com_eventbooking/elements">
+                <field name="mode" type="list" label="Payment Mode" description="Set to Test Mode Or Live Mode">
+                    <option value="0">Test Mode</option>
+                    <option value="1">Live Mode</option>
+                </field>
+                <field name="ALIAS" type="text" size="340" label="ALIAS" description="Enter your payment gateway ALIAS" default=""></field>
+                <field name="CHIAVESEGRETA" type="text" size="340" label="CHIAVESEGRETA" description="Enter your payment gateway CHIAVESEGRETA" default=""></field>
+                <field name="payment_fee_amount" type="text" label="Payment Processing Fee ($)" description=""></field>
+                <field name="payment_fee_percent" type="text" label="Payment Processing Fee (%)" description=""></field>
+                <field name="ipn_log" type="list" label="Log IPN messages"
+                       description="This is only used for debug purpose when requested. Please set it to No unless requested by our support team"
+                       default="0">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <files>
+        <filename>nexi_payments.php</filename>
+    </files>
+</install>
